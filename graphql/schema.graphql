@@ -1,5 +1,4 @@
 type Country {
-  id: Int!
   name: String!
   code3: String!
   capital: String!
@@ -11,8 +10,8 @@ type Country {
 }
 
 type Query {
-  countries: [Country]!
-  country(id: Int!): Country!
+  countries(type: String!, value: String!): [Country]!
+  country(code3: String!): Country!
 }
 
 type Mutation {
@@ -26,5 +25,5 @@ type Mutation {
     population: Int!
     gini: Float!
   ): Country!
-  deleteCountry(id: Int!): Boolean!
+  deleteCountry(code3: String!): Boolean!
 }

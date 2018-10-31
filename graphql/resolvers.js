@@ -1,9 +1,9 @@
-import { countries, getById, addCountry, deleteCountry } from "./db";
+import { countries, addCountry, deleteCountry } from "./db";
 
 const resolvers = {
   Query: {
-    countries: () => countries,
-    country: (_, { id }) => getById(id)
+    countries: (_, { type, value }) => countries(type, value)
+    // country: (_, { id }) => getById(id)
   },
   Mutation: {
     addCountry: (
@@ -19,8 +19,8 @@ const resolvers = {
         callingCode,
         population,
         gini
-      ),
-    deleteCountry: (_, { id }) => deleteCountry(id)
+      )
+    // deleteCountry: (_, { id }) => deleteCountry(id)
   }
 };
 
