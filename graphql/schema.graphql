@@ -1,0 +1,15 @@
+type Country {
+  id: Int!
+  name: String!
+  code3: String!
+  capital: String!
+  region: String!
+  subregion: String!
+  callingCode: String!
+  population: Int!
+  gini: Float!
+}
+
+type Query {
+  countries: [Country]!
+}
