@@ -10,3 +10,14 @@ export const countries = async (type, value) => {
   });
   return result;
 };
+
+export const getCountry = async alpha3Code => {
+  const result = await axios(`${BASE_URL}/alpha/${alpha3Code}`).then(function(
+    response
+  ) {
+    const country = response.data;
+    return country;
+  });
+  console.log(result);
+  return result;
+};

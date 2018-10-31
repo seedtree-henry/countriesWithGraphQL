@@ -1,29 +1,27 @@
 type Country {
   name: String!
-  code3: String!
+  alpha3Code: String!
   capital: String!
   region: String!
   subregion: String!
-  callingCode: String!
   population: Int!
   gini: Float!
 }
 
 type Query {
   countries(type: String!, value: String!): [Country]!
-  country(code3: String!): Country!
+  country(alpha3Code: String!): Country!
 }
 
 type Mutation {
   addCountry(
     name: String!
-    code3: String!
+    alpha3Code: String!
     capital: String!
     region: String!
     subregion: String!
-    callingCode: String!
     population: Int!
     gini: Float!
   ): Country!
-  deleteCountry(code3: String!): Boolean!
+  deleteCountry(alpha3Code: String!): Boolean!
 }
